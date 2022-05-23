@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: zielnikaksdemoapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zielnikaksdemoapp
+  template:
+    metadata:
+      labels:
+        app: zielnikaksdemoapp 
+    spec:
+      containers:
+        - name: zielnikaksdemoapp 
+          image: kzacr0001.azurecr.io/zielnikaksdemoapp
+          ports:
+          - containerPort: 8080
